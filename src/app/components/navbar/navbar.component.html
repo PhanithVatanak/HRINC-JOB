@@ -1,0 +1,45 @@
+<header class="p-4 text-black bg-white rounded-xl">
+	<div class="container flex justify-between h-5 mx-auto w-[1200px]">
+		<a rel="noopener noreferrer" href="#" aria-label="Back to homepage" class="flex items-center p-2">
+			<img src="../../../assets/image/hrinc-logo.png" alt="" class="h-10">
+		</a>
+		<ul class="items-stretch hidden space-x-3 lg:flex mr-[200px]">
+			<li class="flex">
+				<a rel="noopener noreferrer" href="#" class="flex items-center px-2 -mb-1 dark:text-violet-400 dark:border-violet-400">Home</a>
+			</li>
+			<li class="flex">
+				<a rel="noopener noreferrer" href="#" class="flex items-center px-2 -mb-1">About Us</a>
+			</li>
+			<li class="flex">
+				<a rel="noopener noreferrer" href="#" class="flex items-center px-2 -mb-1">Contact Us</a>
+			</li>
+			<li class="flex">
+				<a rel="noopener noreferrer" href="#" class="flex items-center px-2 -mb-1">ASEAN</a>
+			</li>
+		</ul>
+		<div class="items-center flex-shrink-0 hidden lg:flex">
+
+      <button class="self-center py-3 rounded" *ngIf="toggleMode ; then sunToggleMode; else moonToggleMode"></button>
+      <ng-template #sunToggleMode>
+        <svg (click)="nightModeToggle()" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 cursor-pointer">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+        </svg>
+      </ng-template>
+      <ng-template #moonToggleMode>
+        <svg (click)="nightModeToggle()" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 cursor-pointer">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+        </svg>
+      </ng-template>
+
+			<button class="self-center px-8 py-3 rounded">Sign in</button>
+			<button class="self-center px-5 py-1 rounded-3xl text-white bg-[#20c9f9]">Employer</button>
+			<button class="self-center px-5 py-1 ml-4 rounded-3xl text-white bg-[#20c9f9]">Get Quotations</button>
+		</div>
+		<button class="p-4 lg:hidden">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 dark:text-gray-100">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+			</svg>
+		</button>
+	</div>
+</header>
+<div class="border-[1px]"></div>

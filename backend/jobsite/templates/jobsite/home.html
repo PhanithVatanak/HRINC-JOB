@@ -1,0 +1,27 @@
+{% extends 'jobsite/main.html' %}
+{% block content %}
+
+<div class="flex justify-between mx-[150px]">
+    <hr class="">
+    <div class="flex justify-center">
+        <div class="text-white w-[350px] text-center ">
+            <div class="sticky top-[75px]">
+                <h1 class="pt-3">Job Function</h1>
+                <hr class="mt-5">
+                {% for jobFunctionTitle in jobFunction_Titles %}
+                <a class="text-red-500 hover:scale-95 transform duration-300" href="{% url 'home' %}?q={{ jobFunctionTitle.id }}">{{ jobFunctionTitle.job_title }}</a>
+                <div>{{ jobFunctionTitle.job_title }}</div>
+                <hr class="my-2">
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div>
+        {% include 'jobsite/jobList.html' %}
+    </div>
+</div>
+
+
+
+<hr class="mt-5">
+{% endblock %}
