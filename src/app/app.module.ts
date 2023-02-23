@@ -8,6 +8,7 @@ import { SearchJobCategoryComponent } from './components/home/search-job-categor
 import { MaterialModule } from './material/material.module';
 import { HomeMainJobComponent } from './components/home/home-main-job/home-main-job.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -22,7 +23,8 @@ import { FooterComponent } from './components/footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
