@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'jobsite.apps.JobsiteConfig',
     'rest_framework',
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -50,6 +51,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:4200"
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -129,6 +137,7 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = BASE_DIR / 'static/image/static/upload/'
 
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Default primary key field type

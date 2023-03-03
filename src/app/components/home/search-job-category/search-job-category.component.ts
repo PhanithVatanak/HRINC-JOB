@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { JobsiteDataService } from 'src/app/services/jobsite-data.service';
+import {FormControl} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
 
 
 interface Food {
@@ -11,11 +15,15 @@ interface Food {
   templateUrl: './search-job-category.component.html',
   styleUrls: ['./search-job-category.component.css']
 })
-export class SearchJobCategoryComponent {
+export class SearchJobCategoryComponent implements OnInit {
 
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'},
-  ];
+  public Job_Functions = [] as any;
+
+  constructor ( private _job_Function_Services : JobsiteDataService ) {}
+
+  ngOnInit(): void {
+      this._job_Function_Services.getJobsite_jobFunction().subscribe((data) => {
+        this.Job_Functions = data
+      })
+  }
 }

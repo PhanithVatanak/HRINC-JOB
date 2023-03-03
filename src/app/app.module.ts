@@ -9,6 +9,8 @@ import { MaterialModule } from './material/material.module';
 import { HomeMainJobComponent } from './components/home/home-main-job/home-main-job.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http'
+import { JobsiteDataService } from './services/jobsite-data.service';
 
 
 
@@ -24,9 +26,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [JobsiteDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

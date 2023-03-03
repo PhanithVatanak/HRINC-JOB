@@ -4,7 +4,7 @@ from . import models
 class jobFunctionSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.JobFunction
-        fields = ['job_title']
+        fields = ['id', 'job_title']
 
 
 class jobListSerializer(serializers.ModelSerializer):

@@ -146,32 +146,44 @@
   <div>
     <div class="w-[1150px] m-5 flex justify-between">
       <div class="">
-        <mat-form-field class="example-full-width w-[450px]">
+        <mat-form-field class="example-full-width w-[400px]">
           <mat-label>Keywords, job titles, company name</mat-label>
           <input matInput #message maxlength="256" placeholder="Job Title, Company" >
         </mat-form-field>
       </div>
       <div>
-        <mat-form-field class="">
-          <mat-label>Job Function</mat-label>
-          <mat-select>
-            <input matInput #message maxlength="256" placeholder="Search" >
-            <mat-option *ngFor="let food of foods" [value]="food.value">
-              {{food.viewValue}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+        <form class="example-form">
+          <mat-form-field class="example-full-width w-[300px]" appearance="fill">
+            <mat-label>Job Function</mat-label>
+            <input type="text"
+                  placeholder="Pick one"
+                  aria-label="Number"
+                  matInput
+                  [matAutocomplete]="auto">
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+              <mat-option *ngFor="let job_Function of Job_Functions" [value]="job_Function.job_title">
+                {{job_Function.job_title}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </form>
       </div>
       <div>
-        <mat-form-field class="">
-          <mat-label>Job's Location</mat-label>
-          <mat-select>
-            <input matInput #message maxlength="256" placeholder="Search" >
-            <mat-option *ngFor="let food of foods" [value]="food.value">
-              {{food.viewValue}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+        <form class="example-form">
+          <mat-form-field class="example-full-width w-[300px]" appearance="fill">
+            <mat-label>Job's Location</mat-label>
+            <input type="text"
+                  placeholder="Pick one"
+                  aria-label="Number"
+                  matInput
+                  [matAutocomplete]="auto">
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+              <mat-option *ngFor="let job_Function of Job_Functions" [value]="job_Function.job_title">
+                {{job_Function.job_title}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </form>
       </div>
       <div class="mt-4">
         <button class="self-center px-5 py-1 rounded-3xl text-white bg-[#20c9f9]">Search</button>
@@ -180,117 +192,12 @@
     <div>
       <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center" dynamicHeight>
         <mat-tab label="Function">
-          <div class="flex justify-between mx-5 mt-5 text-cyan-500">
+          <div class="flex justify-between mx-5 mt-5 text-cyan-500" >
             <div class="container mx-auto">
                 <div class="flex flex-wrap">
-                  <div class="lg:w-1/4 md:w-full">
+                  <div *ngFor="let Job_Function of Job_Functions" class="lg:w-1/4 md:w-full">
                     <div class="flex-grow hover:cursor-pointer">
-                      <h4 class="text-lg title-font text-cyan-500">Agriculture & Forestry</h4>
-                    </div>
-                  </div>
-                  <div class="lg:w-1/4 md:w-full">
-                    <div class="flex-grow hover:cursor-pointer">
-                      <h4 class="text-lg title-font text-cyan-500">Administrative / Support </h4>
-                    </div>
-                  </div>
-                  <div class="lg:w-1/4 md:w-full">
-                    <div class="flex-grow hover:cursor-pointer">
-                      <h4 class="text-lg title-font text-cyan-500">Call for Proposal / Bidding </h4>
-                    </div>
-                  </div>
-                  <div class="lg:w-1/4 md:w-full">
-                    <div class="flex-grow hover:cursor-pointer">
-                      <h4 class="text-lg title-font text-cyan-500">Managerial Positions</h4>
-                    </div>
-                  </div>
-                  <div class="lg:w-1/4 md:w-full">
-                    <div class="flex-grow hover:cursor-pointer">
-                      <h4 class="text-lg title-font text-cyan-500">Accounting / Finance</h4>
-                    </div>
-                  </div>
-                  <div class="lg:w-1/4 md:w-full">
-                    <div class="flex-grow hover:cursor-pointer">
-                      <h4 class="text-lg title-font text-cyan-500">Program / Project Management</h4>
-                    </div>
-                  </div>
-                  <div class="lg:w-1/4 md:w-full">
-                    <div class="flex-grow hover:cursor-pointer">
-                      <h4 class="text-lg title-font text-cyan-500">Information Technology</h4>
-                    </div>
-                  </div>
-                  <div class="lg:w-1/4 md:w-full">
-                    <div class="flex-grow hover:cursor-pointer">
-                      <h4 class="text-lg title-font text-cyan-500">Operational Management</h4>
-                    </div>
-                  </div>
-                  <div class="lg:w-1/4 md:w-full">
-                    <div class="flex-grow hover:cursor-pointer">
-                      <h4 class="text-lg title-font text-cyan-500">Media and Communication</h4>
-                    </div>
-                  </div>
-                  <div class="lg:w-1/4 md:w-full">
-                    <div class="flex-grow hover:cursor-pointer">
-                      <h4 class="text-lg title-font text-cyan-500">Food and Beverage </h4>
-                    </div>
-                  </div>
-                  <div class="lg:w-1/4 md:w-full">
-                    <div class="flex-grow hover:cursor-pointer">
-                      <h4 class="text-lg title-font text-cyan-500">Stock / Warehousing  </h4>
-                    </div>
-                  </div>
-                  <div class="lg:w-1/4 md:w-full">
-                    <div class="flex-grow hover:cursor-pointer">
-                      <h4 class="text-lg title-font text-cyan-500">Property Management</h4>
-                    </div>
-                  </div>
-                  <div class="lg:w-1/4 md:w-full">
-                    <div class="flex-grow hover:cursor-pointer">
-                      <h4 class="text-lg title-font text-cyan-500">Business Development</h4>
-                    </div>
-                  </div>
-                  <div class="lg:w-1/4 md:w-full">
-                    <div class="flex-grow hover:cursor-pointer">
-                      <h4 class="text-lg title-font text-cyan-500">Managerial Positions</h4>
-                    </div>
-                  </div>
-                  <div class="lg:w-1/4 md:w-full">
-                    <div class="flex-grow hover:cursor-pointer">
-                      <h4 class="text-lg title-font text-cyan-500">Call for Proposal / Bidding </h4>
-                    </div>
-                  </div>
-                  <div class="lg:w-1/4 md:w-full">
-                    <div class="flex-grow hover:cursor-pointer">
-                      <h4 class="text-lg title-font text-cyan-500">Translation / Interpretation</h4>
-                    </div>
-                  </div>
-                  <div class="lg:w-1/4 md:w-full">
-                    <div class="flex-grow hover:cursor-pointer">
-                      <h4 class="text-lg title-font text-cyan-500">Media and Communication</h4>
-                    </div>
-                  </div>
-                  <div class="lg:w-1/4 md:w-full">
-                    <div class="flex-grow hover:cursor-pointer">
-                      <h4 class="text-lg title-font text-cyan-500">Education / Training</h4>
-                    </div>
-                  </div>
-                  <div class="lg:w-1/4 md:w-full">
-                    <div class="flex-grow hover:cursor-pointer">
-                      <h4 class="text-lg title-font text-cyan-500">Healthcare Services</h4>
-                    </div>
-                  </div>
-                  <div class="lg:w-1/4 md:w-full">
-                    <div class="flex-grow hover:cursor-pointer">
-                      <h4 class="text-lg title-font text-cyan-500">Media and Communication</h4>
-                    </div>
-                  </div>
-                  <div class="lg:w-1/4 md:w-full">
-                    <div class="flex-grow hover:cursor-pointer">
-                      <h4 class="text-lg title-font text-cyan-500">Marketing</h4>
-                    </div>
-                  </div>
-                  <div class="lg:w-1/4 md:w-full">
-                    <div class="flex-grow hover:cursor-pointer">
-                      <h4 class="text-lg title-font text-cyan-500">Stock / Warehousing</h4>
+                      <h4 class="text-lg title-font text-cyan-500">{{ Job_Function.job_title }}</h4>
                     </div>
                   </div>
                 </div>

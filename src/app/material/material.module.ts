@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 
 const MaterialComponents = [
@@ -14,6 +15,7 @@ const MaterialComponents = [
   MatSelectModule,
   MatTabsModule,
   MatCheckboxModule,
+  MatAutocompleteModule,
 ]
 
 @NgModule({
