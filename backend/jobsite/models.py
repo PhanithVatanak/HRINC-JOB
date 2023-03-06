@@ -54,3 +54,5 @@ class JobList(models.Model):
     jobList_user_address = models.CharField(max_length=200)
 
 
+
+
