@@ -15,6 +15,7 @@ class jobListSerializer(serializers.ModelSerializer):
 
     jobList_jobFunction = jobFunctionSerializer(many=True)
 
+
     class Meta:
         model = models.JobList
         fields = (

@@ -61,6 +61,7 @@ class JobFunctionViewSet(viewsets.ModelViewSet):
     serializer_class = jobFunctionSerializer
 
 
+
 class JobListViewSet(viewsets.ModelViewSet):
     queryset = models.JobList.objects.all()
     serializer_class = jobListSerializer
