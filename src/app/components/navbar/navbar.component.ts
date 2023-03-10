@@ -7,10 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  public themeNight = {
-    color : 'blue'
-  }
-
   toggleMode : boolean = false
 
   constructor() {}
