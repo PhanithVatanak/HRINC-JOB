@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from . import models
+from . import views
 
 class jobFunctionSerializer(serializers.ModelSerializer):
     class Meta:
@@ -14,7 +15,6 @@ class jobListSerializer(serializers.ModelSerializer):
     jobList_image_logo = serializers.ImageField(max_length=None)
 
     jobList_jobFunction = jobFunctionSerializer(many=True)
-
 
     class Meta:
         model = models.JobList
