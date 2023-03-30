@@ -16,7 +16,7 @@ class jobListSerializer(serializers.ModelSerializer):
 
     jobList_jobFunction = jobFunctionSerializer(many=True)
 
-    # jobList_jobFunction = serializers.SlugRelatedField(many=True, slug_field='job_title', read_only=True)
+    #jobList_jobFunction = serializers.SlugRelatedField(many=True, slug_field='job_title', read_only=True)
 
     class Meta:
         model = models.JobList
@@ -47,8 +47,3 @@ class jobListSerializer(serializers.ModelSerializer):
             'jobList_user_email',
             'jobList_user_address',
         )
-
-
-
-
-
