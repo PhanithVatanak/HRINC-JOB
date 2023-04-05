@@ -3,6 +3,7 @@ from . import models
 
 
 class jobListForm(ModelForm):
+
     class Meta:
         model = models.JobList
         fields = [
