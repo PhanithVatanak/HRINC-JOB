@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponent } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SearchJobCategoryComponent } from './components/home/search-job-category/search-job-category.component';
@@ -21,6 +21,7 @@ import { JobsiteDataService } from './services/jobsite-data.service';
     SearchJobCategoryComponent,
     HomeMainJobComponent,
     FooterComponent,
+     routingComponent,
   ],
   imports: [
     BrowserModule,
