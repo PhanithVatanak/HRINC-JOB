@@ -38,7 +38,9 @@
                                 </svg>
                                 <span class="dark:text-gray-400">098 889 373</span>
                             </span>
-                            <span class="dark:text-gray-400">{{ jobDetail.jobList_jobFunction }}</span><hr>
+                            {% for jobList_jobFunctions in jobDetail.jobList_jobFunction.all %}
+                                <a class="dark:text-gray-400 mt-3">{{ jobList_jobFunctions.job_title }} , </a>
+                            {% endfor %}
                             {% for jobfunction in job %}
                                 <span class="dark:text-gray-400">{{ jobfunction.job_title }}</span>
                             {% endfor %}

@@ -21,7 +21,7 @@ import { JobsiteDataService } from './services/jobsite-data.service';
     SearchJobCategoryComponent,
     HomeMainJobComponent,
     FooterComponent,
-     routingComponent,
+    routingComponent,
   ],
   imports: [
     BrowserModule,
