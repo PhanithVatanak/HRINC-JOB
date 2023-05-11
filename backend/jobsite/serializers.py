@@ -17,7 +17,7 @@ class jobListSerializer(serializers.ModelSerializer):
     jobList_jobFunction = jobFunctionSerializer(many=True)
 
     #jobList_jobFunction = serializers.SlugRelatedField(many=True, slug_field='job_title', read_only=True)
-    # jobList_jobFunction = serializers.PrimaryKeyRelatedField(queryset=models.JobFunction.objects.all(), many=True)
+    jobList_jobFunction = serializers.PrimaryKeyRelatedField(queryset=models.JobFunction.objects.all(), many=True)
 
 
     class Meta:

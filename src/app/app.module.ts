@@ -11,7 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http'
 import { JobsiteDataService } from './services/jobsite-data.service';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 @NgModule({
@@ -22,6 +22,7 @@ import { JobsiteDataService } from './services/jobsite-data.service';
     HomeMainJobComponent,
     FooterComponent,
     routingComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -31,6 +32,8 @@ import { JobsiteDataService } from './services/jobsite-data.service';
     HttpClientModule
   ],
   providers: [JobsiteDataService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA ],
+
 })
 export class AppModule { }

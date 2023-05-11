@@ -31,13 +31,11 @@ def jobList(request):
     job_Lists = models.JobList.objects.all()
     jobFunction_Titles = models.JobFunction.objects.all()
 
-    job = models.JobFunction.objects.filter(job_title="Banking / Financial Services")
-
     q = request.GET.get('q') if request.GET.get('q') != None else ''
     jobFunctions = models.JobFunction.objects.filter(
         Q(id__icontains = q))
 
-    context = { 'job_Lists' : job_Lists , 'jobFunction_Titles' : jobFunction_Titles , 'jobFunctions' : jobFunctions , 'job' : job}
+    context = { 'job_Lists' : job_Lists , 'jobFunction_Titles' : jobFunction_Titles , 'jobFunctions' : jobFunctions }
     return render(request, 'jobsite/jobList.html', context)
 
 
@@ -52,6 +50,7 @@ def jobListDelete(request, pk):
     jobDetail = models.JobList.objects.get(id=pk)
     jobDetail.delete()
     return redirect('home')
+
 
 
 # API
