@@ -39,7 +39,11 @@
                                 <span class="dark:text-gray-400">098 889 373</span>
                             </span>
                             {% for jobList_jobFunctions in jobDetail.jobList_jobFunction.all %}
-                                <a class="dark:text-gray-400 mt-3">{{ jobList_jobFunctions.job_title }} , </a>
+                              {% if forloop.last %}
+                                  <a class="dark:text-gray-400 mt-3">{{ jobList_jobFunctions.job_title }}</a>
+                              {% else %}
+                                  <a class="dark:text-gray-400 mt-3">{{ jobList_jobFunctions.job_title }} , </a>
+                              {% endif %}
                             {% endfor %}
                             {% for jobfunction in job %}
                                 <span class="dark:text-gray-400">{{ jobfunction.job_title }}</span>
